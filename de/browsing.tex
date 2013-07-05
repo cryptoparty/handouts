@@ -1,0 +1,86 @@
+\documentclass{tufte-handout}
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Do not Track! - Tools für trackingfreies Browsen}
+\author[CryptoParty]{CryptoParty Dresden}
+\date{6. Dezember 2012}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+\usepackage[ngerman]{babel}
+\usepackage[latin1]{inputenc}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent Hier gibt es eine kleine Übersicht über Tools und Mechanismen, die sich einfach benutzen lassen, um wieder mehr Kontrolle darüber zu erhalten, wer wieviel davon weiß, wie wir uns im Internet verhalten. 
+\end{abstract}
+
+\section{Cookies und Tracking - ein paar Grundlagen}\label{sec:page-layout}
+Cookies aus dem Internet krümeln nicht.\marginnote{https://www.verbraucher-sicher-online.de/media/cookiefilm} Dafür können sie Informationen über den Nutzer einer Internetseite speichern. Das passiert, wenn die Seite, die den Cookie beim Benutzer speichern will, aufgerufen wird. Man ruft also nicht nur die Seite ab, sondern speichert unter Umständen auch gleichzeitig einen oder mehrere Cookies dazu ab.
+
+\newthought{Doch wozu dienen Cookies eigentlich?} Cookies sind auf keinen Fall per se böse, denn sie erfüllen mitunter sinnvolle Aufgaben, ohne die der Besuch einer Webseite mitunter sehr unkomfortabel und mühselig wäre. Zum Beispiel speichern sie Benutzerdaten auf Seiten, bei denen man sich einloggen muss, wie sozialen Netz\-werken. Oder sie enthalten den Inhalt des Warenkorbes bei On\-lineshops. Ohne Cookies müsste man diese Informationen also ständig neu eingeben, weil der Browser selbst sie sich nicht merken kann. Auch Benutzereinstellungen, wie die Sprache oder das gewünschte Aussehen einer Seite, können in Cookies abgelegt werden.
+
+\newthought{Aber} Cookies können auch dazu genutzt werden, das Surfverhalten von Nutzern zu verfolgen, den Nutzer also zu \emph{tracken}. Das geschieht meist über sogenannte \emph{Drittanbieter-Cookies}, also jene, die gar nicht vom eigenen Betreiber der Webseite kommen, sondern von Dritten, die beispielsweise einen Werbebanner auf der besuchten Seite platziert haben und so ihre Cookies an die Nutzer der Seite verteilen. Ist dieser Drittanbieter auf mehreren Seiten im Netz vertreten, merkt das Cookie, das den Nutzer bereits vom Besuch einer anderen Seite kennt, wenn dieser weitere Seiten betritt, auf denen der Drittanbieter vertreten ist. Das Cookie kann also dazu benutzt werden, die Wege des Nutzers im Netz nachzuverfolgen. Dann kann ermittelt werden, wofür er sich interessiert und vielleicht bekommt er schon bald ganz persönliche Werbung angezeigt, die auf magische Art und Weise zu wissen scheint, wonach er gerade sucht.
+
+\newthought{Kommt Dir das bekannt vor?} Willst Du nicht, dass unbekannte andere ausnutzen, wofür Du dich gerade interessierst oder was Du deiner Mutter zu Weihnachten schenkst bevor Du selbst es weißt? Im Folgenden sind ein paar Möglichkeiten beschrieben, wie man besser kontrollieren und nachvollziehen kann, welche Informations\-krümel man für wen im Netz hinterlassen will. 
+
+\section{Tools und Co.}
+\subsection{Cookie-Einstellungen}
+Auch ohne zusätzliche Tools hat man bereits die Möglichkeit, sich einen Überblick über gespeicherte Cookies zu verschaffen. Im Firefox-Browser kann man über das Einstellungsmenü\footnote{\emph{Linux}: Bearbeiten - Einstellungen\\ \noindent \emph{Windows/Mac}: Firefox - Einstellungen} die Registerkarte \emph{Datenschutz} öffnen. Wählt man \emph{Firefox wird eine Chronik: \textbf{nach benutzdefinierten Einstellungen anlegen}}, kann man einstellen, dass beispielsweise Cookies von Drittanbietern nicht mehr akzeptiert werden. Über den \emph{Cookies anzeigen...}-Button lassen sich alle gespeicherten Cookies auflisten und bei Bedarf einzeln löschen. 
+
+\subsection{Do Not Track}
+Unter dem \emph{Datenschutz}-Menüpunkt (s.o.) findet sich an erster Stelle die Option \emph{Websites mitteilen, dass ich nicht verfolgt werden möchte}. Diese Option sollte auf jeden Fall aktiv sein. Es handelt sich beim sogenannten \textbf{Do Not Track} (nicht verfolgen) um ein Feld, das beim Anfordern einer Internetseite vom Browser gesendet wird und dem Server signalisiert, dass der Nutzer nicht verfolgt werden will. Da die Einhaltung dieser Bitte freiwillig ist, gibt es jedoch keine Garantie, dass der Betreiber sich daran hält oder überhaupt den Inhalt des \emph{Do Not Track}-Feldes ermittelt.
+
+\paragraph*{Add-ons}\marginnote{Mehr Details und Hilfe zur Add-on-Installation: https://support.mozilla.org/de/kb/addons-finden-und-installieren-und-firefox-anpassen}
+Im Folgenden werden einige Firefox-Addons aufgelistet, die beim Verhindern unerwünschter Cookies nützlich sind und andere positive Effekte auf die Privatsphäre beim Surfen im Internet haben. Bei der Installation der Plugins ist das Vorgehen immer das gleiche: Klickt man auf \emph{Firefox - Addons} bzw. \emph{Extras - Addons}, öffnet sich ein Fenster zur Add-On-Verwaltung. Im Reiter \emph{Add-ons suchen} können nun Add-ons gesucht sowie Details über Add-ons angezeigt werden.
+
+Will man direkt ein Add-on über den Namen finden, kann man diesen in das Suchfeld oben rechts eingeben. Die Installation erfolgt dann über den \emph{Installieren}- bzw. \emph{Zu Firefox hinzufügen}-Button. 
+
+Nach der Installation muss Firefox in der Regel neu gestartet werden - nun ist das Add-on verfügbar!
+
+\subsection{Ghostery}\marginnote{https://www.ghostery.com/}
+Ghostery deckt versteckte Trackingmechanismen auf Webseiten auf (zum Beispiel Zählpixel) und zeigt dem Nutzer eine Liste der aktiven Trackingmechanismen an. Er kann sich dann dazu entschließen, welche er blockieren oder erlauben möchte. Außerdem stellt Ghostery bei Auswahl eines dem Programm bekannten Trackers zusätzliche Informationen zu dessen Herkunft bereit, wie zum Beispiel Abgaben zur Herkunftsfirma und deren Datensammlung.
+\subsection{Better Privacy}\marginnote{https://addons.mozilla.org/de/\\firefox/addon/betterprivacy/}
+Better Privacy hilft dem Nutzer, Langzeitcookies\marginnote{Sie werden auch Flash-Cookies genannt, da sie durch das Ausführen von Flash-Plugins gespeichert werden} zu löschen. Das sind Cookies, die nicht wie klassische Cookies ein Verfallsdatum haben, nach dem sie automatisch vom Browser entfernt werden, sondern die unbegrenzte Lebensdauer haben, weil sie in einem anderen Verzeichnis des Rechners von der Löschung unbehelligt bleiben.
+\subsection{AdBlock Plus}\marginnote{http://adblockplus.org/de/}
+Neben dem Effekt, dass Werbung unangenehm ist und beim Betrachten einer Website stört, werden durch ebenjene oftmals Cookies und Zählpixel auf eine Seite eingeschleust -- ein Werbeblocker bietet hier einfache Hilfe!
+\subsection{NoScript}\marginnote{https://addons.mozilla.org/de/\\firefox/addon/noscript/}
+NoScript blockiert die Ausführung von Skripten, denen nicht explizit vertraut wurde. Das schützt vor der unbemerkten Ausführung von Schadcode und beispielsweise auch Flash-Cookies.
+
+
+\end{document}
